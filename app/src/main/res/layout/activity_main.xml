@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,41 +9,60 @@
     android:backgroundTintMode="add"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="354dp"
-        android:layout_height="82dp"
-        android:fontFamily="sans-serif-black"
-        android:rotation="0"
-        android:rotationX="0"
-        android:shadowColor="#000000"
-        android:shadowDx="7"
-        android:shadowDy="7"
-        android:shadowRadius="20"
-        android:text="AdnroidDev_part1"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:typeface="serif"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="338dp"
-        android:layout_height="337dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@drawable/iluzium" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints,UselessParent">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:background="@color/purple_700"
+            android:id="@+id/lar2"
+            android:layout_width="410dp"
+            android:layout_height="20dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lar1"
+            android:layout_width="411dp"
+            android:layout_height="40dp"
+            android:paddingTop="10dp"
+            android:text="@string/content"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="411dp"
+            android:layout_height="500dp"
+            android:layout_marginTop="100dp"
+            app:srcCompat="@drawable/iluzium"
+         />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:background="@color/purple_700"
+            android:layout_width="411dp"
+            android:layout_marginTop="189dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Footer_layout"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+</LinearLayout>
+
+
+
