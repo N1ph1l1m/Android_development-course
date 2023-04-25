@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,15 +9,9 @@
     android:backgroundTintMode="add"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints,UselessParent">
-
-
         <TextView
             android:background="@color/purple_700"
+            android:layout_alignParentTop="true"
             android:id="@+id/lar2"
             android:layout_width="410dp"
             android:layout_height="20dp"
@@ -27,42 +21,58 @@
             android:textColor="@color/white"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/lar1"
-            android:layout_width="411dp"
-            android:layout_height="40dp"
-            android:paddingTop="10dp"
-            android:text="@string/content"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <ImageView
+    <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="411dp"
-            android:layout_height="500dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/iluzium"
-         />
+            android:contentDescription="TODO"/>
+
+     <TextView
+             android:id="@+id/content"
+             android:layout_toEndOf="@id/imageView2"
+             android:layout_marginTop="50dp"
+             android:layout_width="200dp"
+             android:layout_height="40dp"
+             android:paddingLeft="15dp"
+             android:text="Planet Saturn"
+             android:textAllCaps="false"
+             android:textColor="@color/white"
+             android:textSize="18sp" />
 
 
-        <TextView
+    <TextView
+            android:id="@+id/content2"
+            android:layout_toEndOf="@id/imageView2"
+            android:layout_width="200dp"
+            android:layout_marginTop="75dp"
+            android:paddingLeft="15dp"
+            android:layout_height="40dp"
+            android:text="Years 500000"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:textSize="14sp" />
+
+    <TextView
             android:id="@+id/textView"
             android:background="@color/purple_700"
             android:layout_width="411dp"
-            android:layout_marginTop="189dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:text="Footer_layout"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="30sp"
             tools:ignore="HardcodedText" />
-        </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>
 
 
 
