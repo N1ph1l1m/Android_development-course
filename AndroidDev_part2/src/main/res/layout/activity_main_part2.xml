@@ -1,18 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="8dp"
     android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
     tools:context=".MainActivityPart2">
 
-    <TextView
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Input name"
+        android:inputType="textPersonName"
+        />
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Module_part2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/image_Sales"
+            android:layout_width="400dp"
+            android:layout_height="120dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/sale"
+            tools:srcCompat="@drawable/sale" />
+
+        />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/text_Items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp"
+        android:text="Select Item"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image_Item"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/notebook" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+        android:textAlignment="inherit"
+        android:textColor="@color/black"
+        android:textIsSelectable="false"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/OrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Order Price"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/Price"
+            android:layout_below="@id/OrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="60dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/curreentPrice"
+            android:layout_below="@id/OrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="70dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/quantityPrice"
+            android:layout_toRightOf="@id/OrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:text="Ouantity"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/minus_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/quantityPrice"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/curreentPrice"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/num_quantity"
+            android:layout_below="@id/quantityPrice"
+            android:layout_toRightOf="@id/minus_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/minus_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/quantityPrice"
+            android:layout_marginStart="30dp"
+            android:layout_toRightOf="@id/num_quantity"
+
+            android:text="+" />
+
+        <Button
+            android:id="@+id/addTcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Add to card"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
