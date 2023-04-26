@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,7 +22,6 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
     ArrayAdapter<String> spinnerAdapter;
     HashMap<String, Double> priceHashMap;
     int quantity = 0;
-//    int price = 0;
     String productsName;
     double priceProd;
 
@@ -78,6 +78,19 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         priceProd = (double) priceHashMap.get(productsName);
         TextView Price = findViewById(R.id.Price);
         Price.setText("" + quantity  * priceProd);
+        ImageView productImg = findViewById(R.id.productImg);
+
+        switch (productsName){
+            case("notebook"):
+                productImg.setImageResource(R.drawable.notebook);
+                break;
+            case("mouse"):
+                productImg.setImageResource(R.drawable.mouse);
+                break;
+            case("keyboard"):
+                productImg.setImageResource(R.drawable.keyboard);
+                break;
+        }
     }
 
     @Override
