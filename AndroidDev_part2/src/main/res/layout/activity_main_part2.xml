@@ -101,14 +101,14 @@
             />
 
         <TextView
-            android:id="@+id/curreentPrice"
+            android:id="@+id/curentPrice"
             android:layout_below="@id/OrderPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$"
             android:textSize="18dp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="80dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             />
@@ -118,7 +118,7 @@
             android:layout_toRightOf="@id/OrderPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="150dp"
             android:text="Ouantity"
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -131,7 +131,7 @@
             android:layout_below="@id/quantityPrice"
             android:layout_marginStart="130dp"
             android:layout_marginTop="0dp"
-            android:layout_toRightOf="@id/curreentPrice"
+            android:layout_toRightOf="@id/curentPrice"
             android:text="-"
             android:onClick="minusQuantity"
             tools:ignore="UsingOnClickInXml" />
