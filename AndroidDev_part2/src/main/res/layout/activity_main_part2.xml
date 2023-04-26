@@ -132,7 +132,9 @@
             android:layout_marginStart="130dp"
             android:layout_marginTop="0dp"
             android:layout_toRightOf="@id/curreentPrice"
-            android:text="-" />
+            android:text="-"
+            android:onClick="minusQuantity"
+            tools:ignore="UsingOnClickInXml" />
 
         <TextView
             android:id="@+id/num_quantity"
@@ -155,6 +157,7 @@
             android:layout_below="@id/quantityPrice"
             android:layout_marginStart="30dp"
             android:layout_toRightOf="@id/num_quantity"
+            android:onClick="plusQuantity"
 
             android:text="+" />
 
