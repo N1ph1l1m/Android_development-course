@@ -5,20 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class MainActivityPart2 extends AppCompatActivity {
+public class MainActivityPart2 extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
 
 
     Spinner spinner;
-    ArrayList spinnerArrayList;
-    ArrayAdapter spinnerAdapter;
+    ArrayList<String> spinnerArrayList;
+    ArrayAdapter<String> spinnerAdapter;
+    HashMap<String, Double> priceHashMap;
     int quantity = 0;
-    int price = 0;
+//    int price = 0;
+    String productsName;
+    double priceProd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,47 +31,57 @@ public class MainActivityPart2 extends AppCompatActivity {
         setContentView(R.layout.activity_main_part2);
 
         spinner = findViewById(R.id.spinner);
-        spinnerArrayList = new ArrayList();
+        spinner.setOnItemSelectedListener(this);
+        spinnerArrayList = new ArrayList<>();
 
         spinnerArrayList.add("notebook");
         spinnerArrayList.add("mouse");
         spinnerArrayList.add("keyboard");
 
-        spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,spinnerArrayList);
+        //Событие для спинера с добавление ArrayList
+        spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,spinnerArrayList);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
 
+        priceHashMap = new HashMap();
+        priceHashMap.put("notebook",2000.0);
+        priceHashMap.put("mouse",15.0);
+        priceHashMap.put("keyboard", 10.0);
+
+
+
     }
-
-
-
-
-
     @SuppressLint("SetTextI18n")
     public void minusQuantity(View view) {
         TextView quantityTextView = findViewById(R.id.num_quantity);
-        TextView Price = findViewById(R.id.Price);
         if(quantity>0){
             quantity-=1;
-            price-=200;
             quantityTextView.setText(" " + quantity);
-            Price.setText(" "+ price);
+            TextView Price = findViewById(R.id.Price);
+            Price.setText("" + quantity  * priceProd);
+
         }
 
     }
-
-
     @SuppressLint("SetTextI18n")
     public void plusQuantity(View view) {
         TextView quantityTextView = findViewById(R.id.num_quantity);
-        TextView Price = findViewById(R.id.Price);
         quantity+=1;
-        price+=200;
         quantityTextView.setText(" "+ quantity);
-        Price.setText(" "+ price);
+        TextView Price = findViewById(R.id.Price);
+        Price.setText("" + quantity  * priceProd);
+    }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        productsName = spinner.getSelectedItem().toString();
+        priceProd = (double) priceHashMap.get(productsName);
+        TextView Price = findViewById(R.id.Price);
+        Price.setText("" + quantity  * priceProd);
+    }
 
-
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
