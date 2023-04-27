@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,9 +33,9 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         spinner.setOnItemSelectedListener(this);
         spinnerArrayList = new ArrayList<>();
 
-        spinnerArrayList.add("notebook");
-        spinnerArrayList.add("mouse");
-        spinnerArrayList.add("keyboard");
+        spinnerArrayList.add("Notebook");
+        spinnerArrayList.add("Mouse");
+        spinnerArrayList.add("Keyboard");
 
         //Событие для спинера с добавление ArrayList
         spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,spinnerArrayList);
@@ -45,16 +46,16 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
 
     void OnCreateHashMap(){
         priceHashMap = new HashMap();
-        priceHashMap.put("notebook",2000.0);
-        priceHashMap.put("mouse",15.0);
-        priceHashMap.put("keyboard", 10.0);
+        priceHashMap.put("Notebook",2000.0);
+        priceHashMap.put("Mouse",15.0);
+        priceHashMap.put("Keyboard", 10.0);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_part2);
-        userNameEditTest.findViewById(R.id.userNameEditText);
+        userNameEditText = findViewById(R.id.userNameEditText);
         OnCreateSpinner();
         OnCreateHashMap();
 
@@ -90,17 +91,20 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         TextView descriptionProd = findViewById(R.id.descriptionProd);
 
         switch (productsName){
-            case("notebook"):
+            case("Notebook"):
                 productImg.setImageResource(R.drawable.notebook);
-                descriptionProd.setText("A notebook is a portable computer designed for personal use. It typically has a thin LCD or LED computer screen mounted on the inside of the upper lid of the clamshell form factor. The screen can be folded down to protect the keyboard and other components when the notebook is not in use. Notebooks are designed to be lightweight and easy to carry, and are often used by students, business people, and anyone who needs a computer that can be taken on the go.");
+                String notebookText = ("A notebook is a portable computer designed for personal use. It typically has a thin LCD or LED computer screen mounted on the inside of the upper lid of the clamshell form factor. The screen can be folded down to protect the keyboard and other components when the notebook is not in use. Notebooks are designed to be lightweight and easy to carry, and are often used by students, business people, and anyone who needs a computer that can be taken on the go.");
+                descriptionProd.setText(notebookText);
                 break;
-            case("mouse"):
+            case("Mouse"):
                 productImg.setImageResource(R.drawable.mouse);
-                descriptionProd.setText("A computer mouse is an input device used to control the cursor on a computer screen. It is typically a small handheld device that is moved across a flat surface, such as a mouse pad or desk, to control the movement of the cursor on the screen. A computer mouse usually has at least two buttons and a scrolling wheel, which can be used to perform various functions on the computer, such as selecting and opening files, scrolling through documents, and clicking on links");
+                String mouseText = ("A computer mouse is an input device used to control the cursor on a computer screen. It is typically a small handheld device that is moved across a flat surface, such as a mouse pad or desk, to control the movement of the cursor on the screen. A computer mouse usually has at least two buttons and a scrolling wheel, which can be used to perform various functions on the computer, such as selecting and opening files, scrolling through documents, and clicking on links");
+                descriptionProd.setText(mouseText);
                 break;
-            case("keyboard"):
+            case("Keyboard"):
                 productImg.setImageResource(R.drawable.keyboard);
-                descriptionProd.setText("A keyboard for a PC is a peripheral device that is used to input text and commands into a computer. Here are some common types of PC keyboards:");
+                String keyboardText = ("A keyboard for a PC is a peripheral device that is used to input text and commands into a computer. Here are some common types of PC keyboards:");
+                descriptionProd.setText(keyboardText);
                 break;
         }
     }
@@ -109,7 +113,10 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
 
         Order order = new Order();
         order.username = userNameEditText.getText().toString();
-
+        order.prodname = productsName;
+        order.quantity = quantity;
+        order.price = quantity * priceProd;
+        Log.d("Check", "User name: " + order.username + "\n" + "Product name: " + order.prodname + "\n" + "Quantity: " + order.quantity + "\n" + "Total price: " + order.price);
 
     }
     @Override

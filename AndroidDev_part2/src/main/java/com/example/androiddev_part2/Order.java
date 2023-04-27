@@ -2,7 +2,7 @@ package com.example.androiddev_part2;
 
 public class Order {
     String username;
-    String progname;
+    String prodname;
     int quantity;
     double price;
 
