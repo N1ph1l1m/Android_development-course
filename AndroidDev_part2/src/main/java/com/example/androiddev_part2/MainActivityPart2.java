@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
     int quantity = 0;
     String productsName;
     double priceProd;
+    EditText userNameEditText;
 
     void OnCreateSpinner(){
         spinner = findViewById(R.id.spinner);
@@ -52,6 +54,7 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_part2);
+        userNameEditTest.findViewById(R.id.userNameEditText);
         OnCreateSpinner();
         OnCreateHashMap();
 
@@ -102,6 +105,13 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         }
     }
 
+    public void createOrder(View view){
+
+        Order order = new Order();
+        order.username = userNameEditText.getText().toString();
+
+
+    }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
