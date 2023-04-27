@@ -29,6 +29,8 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
     double priceProd;
     EditText userNameEditText;
 
+
+
     void OnCreateSpinner(){
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
@@ -116,16 +118,17 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         order.username = userNameEditText.getText().toString();
         order.prodname = productsName;
         order.quantity = quantity;
-        order.price = quantity * priceProd;
-        Log.d("Check", "User name: " + order.username + "\n" + "Product name: " + order.prodname + "\n" + "Quantity: " + order.quantity + "\n" + "Total price: " + order.price);
+        order.price = priceProd;
+        order.orderPrice = quantity * priceProd;
+        Log.d("Check", "User name: " + order.username + "\n" + "Product name: " + order.prodname + "\n" + "Quantity: " + order.quantity + "\n" + "Price: " + order.price + "\n" + "Total price: " + order.orderPrice);
 
         if(userNameEditText!=null& quantity!=0){
             Intent orderIntent = new Intent(MainActivityPart2.this, OrderActivity.class);//переход на другое activity
             orderIntent.putExtra("userName" , order.username); //передам имя пользователя в другое OrderActivity
             orderIntent.putExtra("prodName" , order.prodname);
             orderIntent.putExtra("quantity" , order.quantity);
-            orderIntent.putExtra("totalPrice" , order.price);
-
+            orderIntent.putExtra("price" , order.price);
+            orderIntent.putExtra("totalPrice" , order.orderPrice);
             startActivity(orderIntent);
         }
 

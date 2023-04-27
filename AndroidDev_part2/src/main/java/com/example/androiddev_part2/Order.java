@@ -5,6 +5,7 @@ public class Order {
     String prodname;
     int quantity;
     double price;
+    double orderPrice;
 
     public Order(){}
 

@@ -24,8 +24,13 @@ public class OrderActivity extends AppCompatActivity {
         String receivedUsersName  = received_orderIntent.getStringExtra("userName");
         String receivedProdName  = received_orderIntent.getStringExtra("prodName");
         int receivedQuantity  = received_orderIntent.getIntExtra("quantity",0);
-        double receivedPrice = received_orderIntent.getDoubleExtra("totalPrice",0);
+        double receivedPrice = received_orderIntent.getDoubleExtra("price",0);
+        double receivedOrderPrice = received_orderIntent.getDoubleExtra("totalPrice",0);
         // Полученные данные присваиваем TextView OrderActivity
-        receivedData.setText( receivedUsersName + "\n" + receivedProdName + "\n"+ receivedQuantity + "\n" + receivedPrice);
+        receivedData.setText( "User name: " + receivedUsersName + "\n"
+                            + "Product: " + receivedProdName + "\n"
+                            + "Quantity" +  receivedQuantity + "\n"
+                            + "Price for 1: "+ receivedPrice + "\n"
+                            + "Total price: "+receivedOrderPrice);
     }
 }
