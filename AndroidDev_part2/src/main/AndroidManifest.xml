@@ -9,6 +9,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDEV_part1">
         <activity
+            android:name=".OrderActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivityPart2"
             android:exported="true">
             <intent-filter>

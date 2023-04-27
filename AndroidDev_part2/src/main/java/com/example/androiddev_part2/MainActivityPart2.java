@@ -3,6 +3,7 @@ package com.example.androiddev_part2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -117,6 +118,16 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         order.quantity = quantity;
         order.price = quantity * priceProd;
         Log.d("Check", "User name: " + order.username + "\n" + "Product name: " + order.prodname + "\n" + "Quantity: " + order.quantity + "\n" + "Total price: " + order.price);
+
+        if(userNameEditText!=null& quantity!=0){
+            Intent orderIntent = new Intent(MainActivityPart2.this, OrderActivity.class);//переход на другое activity
+            orderIntent.putExtra("userName" , order.username); //передам имя пользователя в другое OrderActivity
+            orderIntent.putExtra("prodName" , order.prodname);
+            orderIntent.putExtra("quantity" , order.quantity);
+            orderIntent.putExtra("totalPrice" , order.price);
+
+            startActivity(orderIntent);
+        }
 
     }
     @Override
