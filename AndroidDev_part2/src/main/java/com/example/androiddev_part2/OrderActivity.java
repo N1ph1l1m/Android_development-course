@@ -19,18 +19,24 @@ public class OrderActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     void ReceivedData(){
         Intent received_orderIntent = getIntent();
-        TextView receivedData = findViewById(R.id.receivedUserName);
+        TextView UserName = findViewById(R.id.receivedUserName);
+        TextView ProductName = findViewById(R.id.receivedproductName);
+        TextView Quantity = findViewById(R.id.receivedQuantity);
+        TextView Price = findViewById(R.id.receivedPrice);
+        TextView OrderPrice = findViewById(R.id.receivedOrderPrice);
+
         //Получаем данные с MainActivityPart2
         String receivedUsersName  = received_orderIntent.getStringExtra("userName");
         String receivedProdName  = received_orderIntent.getStringExtra("prodName");
         int receivedQuantity  = received_orderIntent.getIntExtra("quantity",0);
         double receivedPrice = received_orderIntent.getDoubleExtra("price",0);
         double receivedOrderPrice = received_orderIntent.getDoubleExtra("totalPrice",0);
+
         // Полученные данные присваиваем TextView OrderActivity
-        receivedData.setText( "User name: " + receivedUsersName + "\n"
-                            + "Product: " + receivedProdName + "\n"
-                            + "Quantity" +  receivedQuantity + "\n"
-                            + "Price for 1: "+ receivedPrice + "\n"
-                            + "Total price: "+receivedOrderPrice);
-    }
+            UserName.setText(receivedUsersName);
+            ProductName.setText(receivedProdName);
+            Quantity.setText(receivedQuantity);
+            Price.setText("" + receivedPrice);
+            OrderPrice.setText("" + receivedOrderPrice);
+        }
 }

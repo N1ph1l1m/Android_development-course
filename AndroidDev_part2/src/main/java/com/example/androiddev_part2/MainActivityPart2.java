@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -29,7 +28,15 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
     double priceProd;
     EditText userNameEditText;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_part2);
+        userNameEditText = findViewById(R.id.userNameEditText);
+        OnCreateSpinner();
+        OnCreateHashMap();
 
+    }
 
     void OnCreateSpinner(){
         spinner = findViewById(R.id.spinner);
@@ -54,15 +61,7 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         priceHashMap.put("Keyboard", 10.0);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_part2);
-        userNameEditText = findViewById(R.id.userNameEditText);
-        OnCreateSpinner();
-        OnCreateHashMap();
 
-    }
 
     @SuppressLint("SetTextI18n")
     public void minusQuantity(View view) {
@@ -84,10 +83,11 @@ public class MainActivityPart2 extends AppCompatActivity  implements AdapterView
         Price.setText("" + quantity  * priceProd);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         productsName = spinner.getSelectedItem().toString();
-        priceProd = (double) priceHashMap.get(productsName);
+        priceProd = priceHashMap.get(productsName);
         TextView Price = findViewById(R.id.Price);
         Price.setText("" + quantity  * priceProd);
         ImageView productImg = findViewById(R.id.productImg);
