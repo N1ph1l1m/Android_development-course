@@ -9,7 +9,7 @@
 
 
   <RelativeLayout
-      android:layout_width="170dp"
+      android:layout_width="wrap_content"
       android:layout_height="300dp"
       android:layout_centerVertical="true"
       android:layout_centerHorizontal="true"
@@ -23,20 +23,19 @@
           android:layout_marginTop="10dp"
           android:fontFamily="@font/benchnine_light"
           android:text="@string/user"
-          android:textColor="#3E3E3E"
-          android:textSize="14sp" />
+          android:textColor="#737375"
+          android:textSize="20sp" />
 
     <TextView
         android:id="@+id/receivedUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/UserName"
-        android:layout_marginStart="102dp"
+        android:layout_marginStart="106dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/benchnine_light"
-        android:text="@string/text"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/productName"
         android:layout_width="wrap_content"
@@ -46,7 +45,7 @@
         android:fontFamily="@font/benchnine_light"
         android:text="@string/product"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/receivedproductName"
@@ -56,9 +55,8 @@
         android:layout_marginStart="90dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/benchnine_light"
-        android:text="@string/text1"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/quantity"
@@ -69,7 +67,7 @@
         android:fontFamily="@font/benchnine_light"
         android:text="@string/quantity"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/receivedQuantity"
@@ -79,9 +77,8 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/benchnine_light"
-        android:text="@string/text3"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/price"
@@ -92,7 +89,7 @@
         android:fontFamily="@font/benchnine_light"
         android:text="@string/price"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/receivedPrice"
@@ -102,9 +99,8 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="70dp"
         android:fontFamily="@font/benchnine_light"
-        android:text="@string/text4"
         android:textColor="#737375"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/orderPrice"
@@ -115,7 +111,7 @@
         android:fontFamily="@font/benchnine_light"
         android:text="@string/total_price"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <TextView
@@ -126,9 +122,8 @@
         android:layout_marginStart="86dp"
         android:layout_marginTop="110dp"
         android:fontFamily="@font/benchnine_light"
-        android:text="@string/text5"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         />
 

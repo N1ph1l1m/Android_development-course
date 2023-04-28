@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 public class OrderActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         ReceivedData();
     }
+
     @SuppressLint("SetTextI18n")
     void ReceivedData(){
         Intent received_orderIntent = getIntent();
@@ -35,7 +37,7 @@ public class OrderActivity extends AppCompatActivity {
         // Полученные данные присваиваем TextView OrderActivity
             UserName.setText(receivedUsersName);
             ProductName.setText(receivedProdName);
-            Quantity.setText(receivedQuantity);
+            Quantity.setText("" + receivedQuantity);
             Price.setText("" + receivedPrice);
             OrderPrice.setText("" + receivedOrderPrice);
         }

@@ -1,7 +1,6 @@
 package com.example.androiddev_part2;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
