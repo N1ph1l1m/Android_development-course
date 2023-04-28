@@ -7,14 +7,147 @@
     android:layout_height="match_parent"
     tools:context=".OrderActivity">
 
+
+  <RelativeLayout
+      android:layout_width="170dp"
+      android:layout_height="300dp"
+      android:layout_centerVertical="true"
+      android:layout_centerHorizontal="true"
+      >
+
+      <TextView
+          android:id="@+id/UserName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:fontFamily="@font/benchnine_light"
+          android:text="User:"
+          android:textColor="#3E3E3E"
+          android:textSize="14sp" />
+
     <TextView
         android:id="@+id/receivedUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="15dp"
-        android:textSize="30sp"
-        android:textColor="#0022FF"
+        android:layout_toRightOf="@id/UserName"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="=text"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="Product:"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/receivedproductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/productName"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="=text"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="Quantity:"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/receivedQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/quantity"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="=text"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="Price:"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/receivedPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/quantity"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="=text"
+        android:textColor="#737375"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/orderPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="110dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="Total price:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
         />
+
+    <TextView
+        android:id="@+id/receivedOrderPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/quantity"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="110dp"
+        android:fontFamily="@font/benchnine_light"
+        android:text="=text"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+
+      <ImageView
+          android:id="@+id/imageView4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@id/receivedOrderPrice"
+          app:srcCompat="@drawable/QR" />
+
+
+  </RelativeLayout>
+
+
+
+
+
 </RelativeLayout>
