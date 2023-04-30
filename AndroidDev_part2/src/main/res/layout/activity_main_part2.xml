@@ -31,8 +31,6 @@
             app:srcCompat="@drawable/sale"
             tools:srcCompat="@drawable/sale"
             android:contentDescription="@string/todo1" />
-
-
     </RelativeLayout>
 
 
@@ -74,8 +72,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
 
         <TextView
@@ -169,6 +166,17 @@
             android:onClick="createOrder"
             tools:ignore="UsingOnClickInXml" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/addTocard"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/order"
+        android:textAllCaps="true"
+        android:onClick="createOrder"
+        tools:ignore="DuplicateIds,UsingOnClickInXml" />
 
 
 </LinearLayout>
