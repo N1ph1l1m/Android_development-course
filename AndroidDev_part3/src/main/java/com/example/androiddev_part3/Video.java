@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class video extends AppCompatActivity {
+public class Video extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

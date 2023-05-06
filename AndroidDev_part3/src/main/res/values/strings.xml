@@ -5,4 +5,5 @@
     <string name="image">Image</string>
     <string name="animation">Animation</string>
     <string name="work_with_images_audio_and_video">Work with images,audio and video</string>
+    <string name="video_activity">Video activity</string>
 </resources>

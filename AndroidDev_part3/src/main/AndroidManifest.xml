@@ -9,22 +9,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDEV_part1">
         <activity
-            android:name=".video"
-            android:exported="false">
+            android:name=".Video"
+            android:exported="false"
+            android:label="Video">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Audio"
-            android:exported="false">
+            android:exported="false"
+            android:label="Audio">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Image"
-            android:exported="false">
+            android:exported="false"
+            android:label="Image">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -44,7 +48,8 @@
         </activity>
         <activity
             android:name=".Animation"
-            android:exported="true">
+            android:exported="true"
+            android:label="Animation">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -21,15 +21,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(animation);
     }
     public void clickImage(View view) {
-        Intent animation = new Intent(MainActivity.this,Animation.class);
-        startActivity(animation);
+        Intent image = new Intent(MainActivity.this,Image.class);
+        startActivity(image);
     }
     public void clickAudio(View view) {
-        Intent animation = new Intent(MainActivity.this,Animation.class);
-        startActivity(animation);
+        Intent audio = new Intent(MainActivity.this,Audio.class);
+        startActivity(audio);
     }
     public void clickVideo(View view) {
-        Intent animation = new Intent(MainActivity.this,Animation.class);
-        startActivity(animation);
+        Intent video = new Intent(MainActivity.this,Video.class);
+        startActivity(video);
     }
 }
