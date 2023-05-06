@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:text="@string/work_with_images_audio_and_video"
+        android:layout_marginTop="150dp"
+        android:textStyle="bold"
+
+        android:layout_centerHorizontal="true"
+         />
+
+    <Button
+        android:id="@+id/buttonAnimation"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:text="@string/animation"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:onClick="clickAnimation"
+       />
+
+    <Button
+        android:id="@+id/buttonImage"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#000000"
+        android:text="@string/image"
+        android:textAllCaps="false"
+        android:onClick="clickImage"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/buttonAudio"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#000000"
+        android:text="@string/audio"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/buttonImage"
+        android:onClick="clickAudio"
+        tools:layout_editor_absoluteX="161dp" />
+
+    <Button
+        android:id="@+id/buttonVideo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#000000"
+        android:text="@string/video"
+        android:textAllCaps="false"
+        android:onClick="clickVideo"
+        app:layout_constraintTop_toBottomOf="@+id/buttonImage"
+        tools:layout_editor_absoluteX="161dp" />
+
+
+</RelativeLayout>

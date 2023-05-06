@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidDev_part3</string>
+    <string name="video">Video</string>
+    <string name="audio">Audio</string>
+    <string name="image">Image</string>
+    <string name="animation">Animation</string>
+    <string name="work_with_images_audio_and_video">Work with images,audio and video</string>
 </resources>
