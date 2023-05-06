@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,11 +11,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Audio activity"
-        tools:layout_editor_absoluteX="177dp"
+        android:text="@string/audio_activity"
         android:textSize="26sp"
-        android:textColor="@color/black"
-        tools:layout_editor_absoluteY="40dp" />
+        android:layout_marginTop="250dp"
+        android:textColor="@color/black" />
 
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_alignTop="@id/textViewAudio"
+        android:layout_marginTop="50dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:text="@string/start"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:onClick="clickStart"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/buttonPause"
+        android:layout_alignTop="@id/textViewAudio"
+        android:layout_marginTop="100dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:text="@string/Pause"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:onClick="clickPause"
+        tools:ignore="UsingOnClickInXml" />
 </RelativeLayout>
