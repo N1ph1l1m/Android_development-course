@@ -26,19 +26,6 @@
         android:text="@string/start"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
-        android:onClick="clickStart"
         tools:ignore="UsingOnClickInXml" />
 
-    <Button
-        android:id="@+id/buttonPause"
-        android:layout_alignTop="@id/textViewAudio"
-        android:layout_marginTop="100dp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
-        android:text="@string/Pause"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="false"
-        android:onClick="clickPause"
-        tools:ignore="UsingOnClickInXml" />
 </RelativeLayout>
