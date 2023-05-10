@@ -36,11 +36,9 @@
         android:layout_alignTop="@id/textViewAudio"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:backgroundTintMode="add"
-        android:hapticFeedbackEnabled="false"
-        android:progressBackgroundTint="#000000" />
-
+        android:backgroundTint="#3700B3"
+        android:progressBackgroundTint="#494949"
+        android:progressTint="#3700B3"
+        android:thumbTint="#000000" />
 
 </RelativeLayout>
