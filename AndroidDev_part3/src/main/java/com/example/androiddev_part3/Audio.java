@@ -34,15 +34,11 @@ public class Audio extends AppCompatActivity {
                 Log.d("Progress changed:",  "" + progress);
                 audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress,0);
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         button.setOnClickListener( new View.OnClickListener(){

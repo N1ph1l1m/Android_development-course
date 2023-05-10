@@ -9,10 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDEV_part1">
         <activity
+            android:name=".MusicPlayer"
+            android:exported="false" />
+        <activity
             android:name=".Video"
             android:exported="false"
             android:label="Video">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

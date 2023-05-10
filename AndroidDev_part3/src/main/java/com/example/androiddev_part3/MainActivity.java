@@ -32,4 +32,8 @@ public class MainActivity extends AppCompatActivity {
         Intent video = new Intent(MainActivity.this,Video.class);
         startActivity(video);
     }
+    public void clickMusicPlayer(View view) {
+        Intent musicPlayer = new Intent(MainActivity.this, MusicPlayer.class);
+        startActivity(musicPlayer);
+    }
 }
