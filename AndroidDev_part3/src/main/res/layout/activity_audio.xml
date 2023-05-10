@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
     tools:context=".Audio">
 
     <TextView
@@ -11,21 +12,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/audio_activity"
-        android:textSize="26sp"
         android:layout_marginTop="250dp"
-        android:textColor="@color/black" />
+        android:text="@string/audio_activity"
+        android:textColor="@color/black"
+        android:textSize="26sp" />
 
     <Button
         android:id="@+id/buttonStart"
-        android:layout_alignTop="@id/textViewAudio"
-        android:layout_marginTop="50dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@id/textViewAudio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:backgroundTint="#000000"
         android:text="@string/start"
-        android:layout_centerHorizontal="true"
         android:textAllCaps="false"
         tools:ignore="UsingOnClickInXml" />
+
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/textViewAudio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="add"
+        android:hapticFeedbackEnabled="false"
+        android:progressBackgroundTint="#000000" />
+
 
 </RelativeLayout>
