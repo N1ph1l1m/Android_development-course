@@ -10,7 +10,10 @@
         android:theme="@style/Theme.AndroidDEV_part1">
         <activity
             android:name=".MusicPlayer"
-            android:exported="false" />
+            android:exported="false"
+            android:label=""
+            android:theme="@style/MusicPlayer"/>
+        />
         <activity
             android:name=".Video"
             android:exported="false"
