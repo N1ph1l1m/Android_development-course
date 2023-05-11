@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="280px"
+        android:layout_marginTop="80dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/abbyroad"
@@ -41,48 +41,87 @@
         android:textSize="16dp"
         android:text="Come together" />
 
+
+    <SeekBar
+        android:id="@+id/seekbarMusic"
+        android:layout_width="330dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/textNameTrack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:thumbTint="@color/white"
+        android:progressTint="@color/white"
+        android:progressBackgroundTint="#FFFCFD" />
+
     <ImageView
         android:id="@+id/viewPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
+        android:layout_below="@id/seekbarMusic"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="40dp"
         android:background="#00FFFFFF"
         android:onClick="musicPlay"
-        app:srcCompat="@drawable/play_arrow" />
+        app:srcCompat="@drawable/play_arrow"
+        tools:ignore="UsingOnClickInXml"
+        android:importantForAccessibility="no" />
 
 
     <ImageView
-        android:id="@+id/viewNextMusic"
+        android:id="@+id/viewEndTrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="110dp"
+        android:layout_below="@id/seekbarMusic"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
         android:layout_toEndOf="@id/viewPlay"
-        app:srcCompat="@drawable/skip_next_music" />
+        android:onClick="endMusic"
+        app:srcCompat="@drawable/skip_next_music"
+        tools:ignore="UsingOnClickInXml"
+        android:importantForAccessibility="no"/>
 
     <ImageView
-        android:id="@+id/viewPreviousMusic"
+        android:id="@+id/viewStartTrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="110dp"
+        android:layout_below="@id/seekbarMusic"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="40dp"
         android:layout_toStartOf="@id/viewPlay"
-        app:srcCompat="@drawable/skip_previous_music" />
+        android:onClick="startMusic"
+        app:srcCompat="@drawable/skip_previous_music"
+        tools:ignore="UsingOnClickInXml"
+        android:importantForAccessibility="no"/>
 
     <SeekBar
         android:id="@+id/seekbarVolume"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
+        android:layout_width="260dp"
+        android:layout_height="10dp"
         android:layout_below="@id/viewPlay"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:thumbTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:progressBackgroundTint="#FBFEFF"
+        android:progress="50"
         android:progressTint="@color/white"
-        android:progressBackgroundTint="#FFFCFD"
-        android:progress="30"/>
+        android:thumbTint="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imageViewMute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewStartTrack"
+        android:layout_marginTop="12dp"
+        android:layout_toStartOf="@id/seekbarVolume"
+        app:srcCompat="@drawable/volume_mute" />
+
+    <ImageView
+        android:id="@+id/imageViewMaxVolum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEndTrack"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@id/seekbarVolume"
+        app:srcCompat="@drawable/volume_max"/>
+
 
 </RelativeLayout>
