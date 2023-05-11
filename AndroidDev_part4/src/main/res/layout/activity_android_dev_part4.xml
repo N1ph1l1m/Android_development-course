@@ -43,31 +43,31 @@
         android:textAllCaps="false"
         tools:ignore="UsingOnClickInXml" />
 
-<!--    <Button-->
-<!--        android:id="@+id/buttonAudio"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="300dp"-->
-<!--        android:backgroundTint="#000000"-->
-<!--        android:onClick="clickAudio"-->
-<!--        android:text="@string/audio"-->
-<!--        android:textAllCaps="false"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/buttonImage"-->
-<!--        tools:layout_editor_absoluteX="161dp" />-->
+    <Button
+        android:id="@+id/buttonRecycle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="#000000"
+        android:onClick="clickRecycleView"
+        android:text="RecycleView"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/buttonImage"
+        tools:layout_editor_absoluteX="161dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/buttonVideo"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="350dp"-->
-<!--        android:backgroundTint="#000000"-->
-<!--        android:onClick="clickVideo"-->
-<!--        android:text="@string/video"-->
-<!--        android:textAllCaps="false"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/buttonImage"-->
-<!--        tools:layout_editor_absoluteX="161dp" />-->
+    <Button
+        android:id="@+id/buttonCard"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:backgroundTint="#000000"
+        android:onClick="clickCardView"
+        android:text="CardView"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/buttonImage"
+        tools:layout_editor_absoluteX="161dp" />
 
 <!--    <Button-->
 <!--        android:id="@+id/buttonMusicPlayer"-->
