@@ -16,3 +16,4 @@ rootProject.name = "AndroidDEV_part1"
 include ':app'
 include ':AndroidDev_part2'
 include ':AndroidDev_part3'
+include ':AndroidDev_part4'
