@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDEV_part1">
         <activity
+            android:name=".activityListView"
+            android:exported="false" />
+        <activity
+            android:name=".colorListView"
+            android:exported="false" />
+        <activity
             android:name=".AndroidDev_part4"
             android:exported="true">
             <intent-filter>
