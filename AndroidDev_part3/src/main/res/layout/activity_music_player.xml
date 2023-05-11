@@ -18,41 +18,7 @@
         tools:layout_editor_absoluteX="56dp"
         tools:layout_editor_absoluteY="102dp" />
 
-    <Button
-        android:id="@+id/buttonPlay"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
-        android:background="#00FFFFFF"
-        android:onClick="musicPlay"
-        android:drawableBottom="@android:drawable/ic_media_play" />
 
-    <Button
-        android:id="@+id/buttonNextMusic"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/imageView"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="110dp"
-        android:layout_toEndOf="@id/buttonPlay"
-        android:background="#00FFFFFF"
-        android:drawableBottom="@android:drawable/ic_media_ff"
-        />
-
-    <Button
-        android:id="@+id/buttonLastMusic"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/imageView"
-        android:layout_toStartOf="@id/buttonPlay"
-        android:layout_marginTop="110dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-
-        android:background="#00FFFFFF"
-        android:drawableBottom="@android:drawable/ic_media_rew" />
 
     <TextView
         android:id="@+id/textNameAlmum"
@@ -75,17 +41,48 @@
         android:textSize="16dp"
         android:text="Come together" />
 
+    <ImageView
+        android:id="@+id/viewPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:background="#00FFFFFF"
+        android:onClick="musicPlay"
+        app:srcCompat="@drawable/play_arrow" />
+
+
+    <ImageView
+        android:id="@+id/viewNextMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="110dp"
+        android:layout_toEndOf="@id/viewPlay"
+        app:srcCompat="@drawable/skip_next_music" />
+
+    <ImageView
+        android:id="@+id/viewPreviousMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="110dp"
+        android:layout_toStartOf="@id/viewPlay"
+        app:srcCompat="@drawable/skip_previous_music" />
+
     <SeekBar
         android:id="@+id/seekbarVolume"
         android:layout_width="300dp"
         android:layout_height="30dp"
-        android:layout_below="@id/buttonPlay"
+        android:layout_below="@id/viewPlay"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:thumbTint="@color/white"
         android:progressTint="@color/white"
         android:progressBackgroundTint="#FFFCFD"
         android:progress="30"/>
-
 
 </RelativeLayout>
