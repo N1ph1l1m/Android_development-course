@@ -1,4 +1,4 @@
-package com.example.androiddev_part4;
+package com.example.androiddev_part4.Recycler;
 
 public class RecyclerViewItem {
     private int imageResource;

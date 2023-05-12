@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidDev_part4</string>
+    <string name="materialdesign">MaterialDesign</string>
+    <string name="list_view">List view</string>
+    <string name="list_view_color">List view color</string>
+    <string name="recycleview">RecycleView</string>
 </resources>

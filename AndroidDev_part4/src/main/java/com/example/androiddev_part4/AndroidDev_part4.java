@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 
-
 public class AndroidDev_part4 extends AppCompatActivity {
 
     @Override
@@ -26,7 +25,7 @@ public class AndroidDev_part4 extends AppCompatActivity {
 
 
     public void clickRecycleView(View view) {
-        Intent recycleView  = new Intent(AndroidDev_part4.this,recycleView.class);
+        Intent recycleView  = new Intent(AndroidDev_part4.this, com.example.androiddev_part4.Recycler.recycleView.class);
         startActivity(recycleView );
     }
 }

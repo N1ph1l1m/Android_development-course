@@ -1,10 +1,12 @@
-package com.example.androiddev_part4;
+package com.example.androiddev_part4.Recycler;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.example.androiddev_part4.R;
 
 import java.util.ArrayList;
 

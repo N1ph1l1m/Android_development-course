@@ -12,7 +12,7 @@
             android:name=".cardView"
             android:exported="false" />
         <activity
-            android:name=".recycleView"
+            android:name=".Recycler.recycleView"
             android:exported="false" />
         <activity
             android:name=".activityListView"

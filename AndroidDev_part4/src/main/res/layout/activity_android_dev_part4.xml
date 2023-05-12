@@ -4,58 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9A9797"
+    android:background="#AEFFFFFF"
     tools:context=".AndroidDev_part4">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:text="MaterialDesign"
-        android:textColor="@color/white"
-        android:textSize="24sp"
+        android:layout_centerInParent="true"
+        tools:ignore="UselessParent">
 
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/materialdesign"
+            android:textColor="@color/black"
+            android:textSize="24sp"
 
-    <Button
-        android:id="@+id/buttonAnimation"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:backgroundTint="#000000"
-        android:onClick="clickListView"
-        android:text="List view"
-        android:textAllCaps="false" />
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonImage"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        android:backgroundTint="#000000"
-        android:onClick="clickListViewColor"
-        android:text="List view color"
-        android:textAllCaps="false"
-        tools:ignore="UsingOnClickInXml" />
+        <Button
+            android:id="@+id/buttonListView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#000000"
+            android:onClick="clickListView"
+            android:layout_marginBottom="15dp"
+            android:text="@string/list_view"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/buttonRecycle"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:backgroundTint="#000000"
-        android:onClick="clickRecycleView"
-        android:text="RecycleView"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/buttonImage"
-        tools:layout_editor_absoluteX="161dp" />
+        <Button
+            android:id="@+id/buttonListViewColor"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/buttonListView"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#000000"
+            android:onClick="clickListViewColor"
+            android:text="@string/list_view_color"
+            android:textAllCaps="false"
+            tools:ignore="UsingOnClickInXml" />
 
+        <Button
+            android:id="@+id/buttonRecycle"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/buttonListViewColor"
+            android:backgroundTint="#000000"
+            android:onClick="clickRecycleView"
+            android:text="@string/recycleview"
+            android:textAllCaps="false"
+            tools:layout_editor_absoluteX="161dp" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
