@@ -56,31 +56,6 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonImage"
         tools:layout_editor_absoluteX="161dp" />
 
-    <Button
-        android:id="@+id/buttonCard"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:backgroundTint="#000000"
-        android:onClick="clickCardView"
-        android:text="CardView"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/buttonImage"
-        tools:layout_editor_absoluteX="161dp" />
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonMusicPlayer"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="400dp"-->
-<!--        android:backgroundTint="#000000"-->
-<!--        android:onClick="clickMusicPlayer"-->
-<!--        android:text="Music player"-->
-<!--        android:textAllCaps="false"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/buttonImage"-->
-<!--        tools:layout_editor_absoluteX="161dp" />-->
 
 
 </RelativeLayout>

@@ -24,10 +24,6 @@ public class AndroidDev_part4 extends AppCompatActivity {
         startActivity(intentListViewColor);
     }
 
-    public void clickCardView(View view) {
-        Intent cardView  = new Intent(AndroidDev_part4.this,cardView.class);
-        startActivity(cardView);
-    }
 
     public void clickRecycleView(View view) {
         Intent recycleView  = new Intent(AndroidDev_part4.this,recycleView.class);
