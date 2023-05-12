@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 
 
 
@@ -26,12 +25,12 @@ public class AndroidDev_part4 extends AppCompatActivity {
     }
 
     public void clickCardView(View view) {
-        Intent recycleView  = new Intent(AndroidDev_part4.this, activityListView.class);
-        startActivity(recycleView );
+        Intent cardView  = new Intent(AndroidDev_part4.this,cardView.class);
+        startActivity(cardView);
     }
 
     public void clickRecycleView(View view) {
-        Intent cardView  = new Intent(AndroidDev_part4.this, activityListView.class);
-        startActivity(cardView);
+        Intent recycleView  = new Intent(AndroidDev_part4.this,recycleView.class);
+        startActivity(recycleView );
     }
 }
