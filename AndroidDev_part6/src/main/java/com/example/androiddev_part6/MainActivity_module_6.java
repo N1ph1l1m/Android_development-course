@@ -3,6 +3,8 @@ package com.example.androiddev_part6;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -15,22 +17,41 @@ public class MainActivity_module_6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_module6);
+        SharedPreferencesFunc();
 
-        if(savedInstanceState != null){
-            textView.setText(savedInstanceState.getString("textToBundle"));
-        }
 
-        textView = findViewById(R.id.textView);
-        Log.d("LifeStyle method","onCreate();");
-        textView.append("onCreate();"+"\n");
+
+
+//
+//        if(savedInstanceState != null){
+//            textView.setText(savedInstanceState.getString("textToBundle"));
+//        }
+//
+//        textView = findViewById(R.id.textView);
+//        Log.d("LifeStyle method","onCreate();");
+//        textView.append("onCreate();"+"\n");
     }
+
+    //Сохранение данных через функцию  SharedPreferences
+    public void SharedPreferencesFunc(){
+        SharedPreferences sharedPreferences = this.getSharedPreferences("firstPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("newPref","Advansed text");
+        //Очищает данные ключ-значение
+        //editor.clear();
+        editor.apply();
+
+        TextView textView = findViewById(R.id.textView);
+        textView.setText(sharedPreferences.getString("newPref","Simple  text"));
+    }
+
 
     @Override
     protected void onStart() {
         super.onStart();
 
         Log.d("LifeStyle method","onStart();");
-        textView.append("onStart();"+"\n");
+        //textView.append("onStart();"+"\n");
     }
 
     @Override
@@ -38,7 +59,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
         super.onResume();
 
         Log.d("LifeStyle method","onResume();");
-        textView.append("onResume();"+"\n");
+        //textView.append("onResume();"+"\n");
     }
 
     @Override
@@ -46,7 +67,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
         super.onPause();
 
         Log.d("LifeStyle method","onPause();");
-        textView.append("onPause();"+"\n");
+        //textView.append("onPause();"+"\n");
     }
 
     @Override
@@ -54,7 +75,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
         super.onStop();
 
         Log.d("LifeStyle method","onStop();");
-        textView.append("onStop);"+"\n");
+        //textView.append("onStop);"+"\n");
     }
 
     @Override
@@ -62,17 +83,17 @@ public class MainActivity_module_6 extends AppCompatActivity {
         super.onDestroy();
 
         Log.d("LifeStyle method","onDestroy();");
-        textView.append("onDestroy();"+"\n");
+        //textView.append("onDestroy();"+"\n");
     }
 
     //Сохраняет состояние activity по ключу  textToBundle.Сохраняет данные только в одной сесси пользователя.
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        Log.d("LifeStyle method","onSaveInstanceState();");
-        textView.append("onSaveInstanceState();"+"\n");
-
-        outState.putString("textToBundle", textView.getText().toString());
-    }
+//    @Override
+//    public void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//
+//        Log.d("LifeStyle method","onSaveInstanceState();");
+//        //textView.append("onSaveInstanceState();"+"\n");
+//
+//        outState.putString("textToBundle", textView.getText().toString());
+//    }
 }
