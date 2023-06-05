@@ -1,8 +1,10 @@
 package com.example.androiddev_part6;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -13,6 +15,10 @@ public class MainActivity_module_6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_module6);
+
+        if(savedInstanceState != null){
+            textView.setText(savedInstanceState.getString("textToBundle"));
+        }
 
         textView = findViewById(R.id.textView);
         Log.d("LifeStyle method","onCreate();");
@@ -57,5 +63,16 @@ public class MainActivity_module_6 extends AppCompatActivity {
 
         Log.d("LifeStyle method","onDestroy();");
         textView.append("onDestroy();"+"\n");
+    }
+
+    //Сохраняет состояние activity по ключу  textToBundle.Сохраняет данные только в одной сесси пользователя.
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        Log.d("LifeStyle method","onSaveInstanceState();");
+        textView.append("onSaveInstanceState();"+"\n");
+
+        outState.putString("textToBundle", textView.getText().toString());
     }
 }
