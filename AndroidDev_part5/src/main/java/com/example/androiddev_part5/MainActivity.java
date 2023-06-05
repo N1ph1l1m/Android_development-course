@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        adapter = new PizzaRecipeAdapter(pizzaRecipeItems);
+
+        adapter = new PizzaRecipeAdapter(pizzaRecipeItems,this);
         layoutManager = new LinearLayoutManager(this);
 
         recyclerView.setAdapter(adapter);

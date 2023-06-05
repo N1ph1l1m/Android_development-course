@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Part2</string>
     <string name="order">Order</string>
     <string name="ouantity">Ouantity</string>
     <string name="order_price">Order Price</string>
@@ -9,14 +8,9 @@
     <string name="todo1">TODO</string>
     <string name="input_name">Input name</string>
     <string name="user">User:</string>
-    <string name="text">=text</string>
     <string name="product">Product:</string>
-    <string name="text1">=text</string>
     <string name="quantity">Quantity:</string>
-    <string name="text3">=text</string>
     <string name="price">Price:</string>
-    <string name="text4">=text</string>
     <string name="total_price">Total price:</string>
-    <string name="text5">=text</string>
     <string name="todo2">TODO</string>
 </resources>

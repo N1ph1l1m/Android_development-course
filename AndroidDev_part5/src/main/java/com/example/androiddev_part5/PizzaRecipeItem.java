@@ -3,27 +3,27 @@ package com.example.androiddev_part5;
 public class PizzaRecipeItem   {
 
 
-    private final int imageResourse;
-    private final String title;
-    private final String description;
+    private int imageResource;
+    private String title;
+    private String description;
+    private String recipe;
 
-    private final String recipe;
-
-
-    public PizzaRecipeItem(int imageResourse, String title, String description,String recipe) {
-        this.imageResourse = imageResourse;
+    public PizzaRecipeItem(int imageResource, String title, String description,
+                           String recipe) {
+        this.imageResource = imageResource;
         this.title = title;
         this.description = description;
         this.recipe = recipe;
     }
 
-
-    public int getImageResourse() {
-        return imageResourse;
+    public int getImageResource() {
+        return imageResource;
     }
+
     public String getTitle() {
         return title;
     }
+
     public String getDescription() {
         return description;
     }
@@ -31,5 +31,4 @@ public class PizzaRecipeItem   {
     public String getRecipe() {
         return recipe;
     }
-
 }

@@ -15,8 +15,7 @@
             android:id="@+id/pizzaImageView"
             android:layout_width="220dp"
             android:layout_height="220dp"
-            android:padding="4dp"
-            android:contentDescription="@string/todo" />
+            android:padding="4dp" />
 
         <TextView
             android:id="@+id/titleTextView"
