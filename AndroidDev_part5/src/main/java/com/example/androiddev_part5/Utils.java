@@ -6,7 +6,7 @@ public class Utils {
     public static final String PIZZA_1_RECIPE = "Make a pizza Neapalitana";
 
     public static final String PIZZA_2_TITLE = "PIZZA VILAGIO";
-    public static final String PIZZA_2_DESCRIPTION = "Chicken fillet, salami, jalapeno pepper, hunting sausages, corn, mozzarella, Yalta onion, oregano, barbecue sauce, tomato sauce.";
+    public static final String PIZZA_2_DESCRIPTION = "Chicken fillet, salami, jalapeno pepper, hunting sausages, corn, mozzarella,   Yalta onion, oregano, barbecue sauce, tomato sauce.";
     public static final String PIZZA_2_RECIPE = "";
 
     public static final String PIZZA_3_TITLE = "PIZZA CARBONARA";
