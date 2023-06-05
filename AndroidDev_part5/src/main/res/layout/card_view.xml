@@ -15,27 +15,28 @@
             android:id="@+id/pizzaImageView"
             android:layout_width="220dp"
             android:layout_height="220dp"
-            android:padding="4dp"/>
+            android:padding="4dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
-            android:id="@+id/titleImageView"
+            android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:text="@string/title"
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@id/pizzaImageView"
             />
         <TextView
-            android:id="@+id/descriptionImageView"
+            android:id="@+id/descriptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="@string/description"
             android:textSize="15sp"
             android:textStyle="italic"
             android:layout_marginTop="7dp"
-            android:layout_below="@id/titleImageView"
+            android:layout_below="@id/titleTextView"
             android:layout_toEndOf="@id/pizzaImageView"
             />
     </RelativeLayout>
