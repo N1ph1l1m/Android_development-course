@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -17,11 +18,10 @@ import android.widget.TextView;
 public class MainActivity_module_6 extends AppCompatActivity {
 
     private TextView textView;
-    private Button buttonTimer;
+//    private Button buttonTimer;
     private TextView textTimer;
    private SeekBar seekBarTimer;
-
-
+   private View view;
 
 
     @Override
@@ -32,7 +32,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
 //        simpleHandler();
 //        SharedPreferencesFunc();
 
-        buttonTimer = findViewById(R.id.buttonTimer);
+//        buttonTimer = findViewById(R.id.buttonTimer);
         textTimer = findViewById(R.id.textViewTimer);
         seekBarTimer = findViewById(R.id.seekBarTimer);
 
@@ -42,26 +42,8 @@ public class MainActivity_module_6 extends AppCompatActivity {
         seekBarTimer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                int minutes = progress/60;
-                int seconds = progress - (minutes*60);
-
-                String minutesString = "";
-                String secondsString = "";
-
-                if(minutes<10){
-                    minutesString = "0" + minutes;
-                }else{
-                    minutesString =  "" + String.valueOf(minutes);
-                }
-
-                if(seconds<10){
-                    secondsString = "0" + seconds;
-                }else{
-                    secondsString = "" + String.valueOf(seconds);
-                }
-
-                textTimer.setText(minutesString + ":" + secondsString);
-
+                long progressInMillis = progress *1000;
+                UpdateTimer(progressInMillis);
             }
 
             @Override
@@ -75,26 +57,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
             }
         });
 
-
-
-//        buttonTimer.hasOnClickListeners(){
-//
-//        }
-//CountDownTimer timerBells = new CountDownTimer(30000,1000) {
-//    @Override
-//    public void onTick(long millisUntilFinished) {
-//        int
-//       textTimer.setText();
-//    }
-//
-//    @Override
-//    public void onFinish() {
-//
-//    }
-}
-
-
-//          for function onSave--
+    //for function onSave--
         /*
         if(savedInstanceState != null){
             textView.setText(savedInstanceState.getString("textToBundle"));
@@ -103,9 +66,10 @@ public class MainActivity_module_6 extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         Log.d("LifeStyle method","onCreate();");
         textView.append("onCreate();"+"\n");*/
-   // }
+   }
+
     //Таймер обратного отчета - таймер длится 10 секунд, с интервалом в одну секунду
-    public void simpleCountDownTimer(){
+   /* public void simpleCountDownTimer(){
 
         CountDownTimer firstTimer = new CountDownTimer(10000,1000) {
             @Override
@@ -135,9 +99,11 @@ public class MainActivity_module_6 extends AppCompatActivity {
         };
         handler.post(runnable);
 
-    }
+    }*/
+
     //Сохранение данных через функцию  SharedPreferences
-    public void SharedPreferencesFunc(){
+    /*
+public void SharedPreferencesFunc(){
 //        SharedPreferences sharedPreferences = this.getSharedPreferences("firstPref", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor = sharedPreferences.edit();
 //        editor.putString("newPref","Advansed text");
@@ -148,61 +114,102 @@ public class MainActivity_module_6 extends AppCompatActivity {
 //        TextView textView = findViewById(R.id.textView);
 //        textView.setText(sharedPreferences.getString("newPref","Simple  text"));
     }
-
+ */
     // Обычное сохранение данных
-    public void onSAVE(){
+    /*public void onSAVE(){
 
-//        @Override
-//        protected void onStart() {
-//            super.onStart();
-//
-//            Log.d("LifeStyle method","onStart();");
-//            //textView.append("onStart();"+"\n");
-//        }
-//
-//        @Override
-//        protected void onResume() {
-//            super.onResume();
-//
-//            Log.d("LifeStyle method","onResume();");
-//            //textView.append("onResume();"+"\n");
-//        }
-//
-//        @Override
-//        protected void onPause() {
-//            super.onPause();
-//
-//            Log.d("LifeStyle method","onPause();");
-//            //textView.append("onPause();"+"\n");
-//        }
-//
-//        @Override
-//        protected void onStop() {
-//            super.onStop();
-//
-//            Log.d("LifeStyle method","onStop();");
-//            //textView.append("onStop);"+"\n");
-//        }
-//
-//        @Override
-//        protected void onDestroy() {
-//            super.onDestroy();
-//
-//            Log.d("LifeStyle method","onDestroy();");
-//            //textView.append("onDestroy();"+"\n");
-//        }
+        @Override
+        protected void onStart() {
+            super.onStart();
+
+            Log.d("LifeStyle method","onStart();");
+            //textView.append("onStart();"+"\n");
+        }
+
+        @Override
+        protected void onResume() {
+            super.onResume();
+
+            Log.d("LifeStyle method","onResume();");
+            //textView.append("onResume();"+"\n");
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+
+            Log.d("LifeStyle method","onPause();");
+            //textView.append("onPause();"+"\n");
+        }
+
+        @Override
+        protected void onStop() {
+            super.onStop();
+
+            Log.d("LifeStyle method","onStop();");
+            //textView.append("onStop);"+"\n");
+        }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+
+            Log.d("LifeStyle method","onDestroy();");
+            //textView.append("onDestroy();"+"\n");
+        }
+*/
 
         //Сохраняет состояние activity по ключу  textToBundle.Сохраняет данные только в одной сесси пользователя.
-//    @Override
-//    public void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//
-//        Log.d("LifeStyle method","onSaveInstanceState();");
-//        //textView.append("onSaveInstanceState();"+"\n");
-//
-//        outState.putString("textToBundle", textView.getText().toString());
-//    }
+        /*
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        Log.d("LifeStyle method","onSaveInstanceState();");
+        //textView.append("onSaveInstanceState();"+"\n");
+
+        outState.putString("textToBundle", textView.getText().toString());
+    }
     }
 
+         */
 
+    public void startTimer(View view){
+        new CountDownTimer(seekBarTimer.getProgress() * 1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                UpdateTimer(millisUntilFinished);
+            }
+
+            @Override
+            public void onFinish() {
+       Log.d("onfinish: ", "finish");
+            }
+
+        }.start();
+
+    }
+
+    private void UpdateTimer(long millisUntilFinished) {
+
+        int minutes = (int) millisUntilFinished / 1000/ 60;
+        int seconds = (int) millisUntilFinished /1000 - (minutes * 60);
+
+        String minutesString = "";
+        String secondsString = "";
+
+        if (minutes < 10) {
+            minutesString = "0" + minutes;
+        } else {
+            minutesString = "" + String.valueOf(minutes);
+        }
+
+        if (seconds < 10) {
+            secondsString = "0" + seconds;
+        } else {
+            secondsString = "" + String.valueOf(seconds);
+        }
+
+        textTimer.setText(minutesString + ":" + secondsString);
+    }
 }
