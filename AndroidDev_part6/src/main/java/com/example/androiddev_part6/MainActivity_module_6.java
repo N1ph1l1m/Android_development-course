@@ -17,76 +17,79 @@ public class MainActivity_module_6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_module6);
-        SharedPreferencesFunc();
+//        SharedPreferencesFunc();
 
 
 
 
-//
-//        if(savedInstanceState != null){
-//            textView.setText(savedInstanceState.getString("textToBundle"));
-//        }
-//
-//        textView = findViewById(R.id.textView);
-//        Log.d("LifeStyle method","onCreate();");
-//        textView.append("onCreate();"+"\n");
+//          for function onSave--
+        /*
+        if(savedInstanceState != null){
+            textView.setText(savedInstanceState.getString("textToBundle"));
+        }
+
+        textView = findViewById(R.id.textView);
+        Log.d("LifeStyle method","onCreate();");
+        textView.append("onCreate();"+"\n");*/
     }
 
     //Сохранение данных через функцию  SharedPreferences
     public void SharedPreferencesFunc(){
-        SharedPreferences sharedPreferences = this.getSharedPreferences("firstPref", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("newPref","Advansed text");
-        //Очищает данные ключ-значение
-        //editor.clear();
-        editor.apply();
-
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(sharedPreferences.getString("newPref","Simple  text"));
+//        SharedPreferences sharedPreferences = this.getSharedPreferences("firstPref", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.putString("newPref","Advansed text");
+//        //Очищает данные ключ-значение
+//        //editor.clear();
+//        editor.apply();
+//
+//        TextView textView = findViewById(R.id.textView);
+//        textView.setText(sharedPreferences.getString("newPref","Simple  text"));
     }
 
+    // Обычное сохранение данных
+    public void onSAVE(){
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+//        @Override
+//        protected void onStart() {
+//            super.onStart();
+//
+//            Log.d("LifeStyle method","onStart();");
+//            //textView.append("onStart();"+"\n");
+//        }
+//
+//        @Override
+//        protected void onResume() {
+//            super.onResume();
+//
+//            Log.d("LifeStyle method","onResume();");
+//            //textView.append("onResume();"+"\n");
+//        }
+//
+//        @Override
+//        protected void onPause() {
+//            super.onPause();
+//
+//            Log.d("LifeStyle method","onPause();");
+//            //textView.append("onPause();"+"\n");
+//        }
+//
+//        @Override
+//        protected void onStop() {
+//            super.onStop();
+//
+//            Log.d("LifeStyle method","onStop();");
+//            //textView.append("onStop);"+"\n");
+//        }
+//
+//        @Override
+//        protected void onDestroy() {
+//            super.onDestroy();
+//
+//            Log.d("LifeStyle method","onDestroy();");
+//            //textView.append("onDestroy();"+"\n");
+//        }
 
-        Log.d("LifeStyle method","onStart();");
-        //textView.append("onStart();"+"\n");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        Log.d("LifeStyle method","onResume();");
-        //textView.append("onResume();"+"\n");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        Log.d("LifeStyle method","onPause();");
-        //textView.append("onPause();"+"\n");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        Log.d("LifeStyle method","onStop();");
-        //textView.append("onStop);"+"\n");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        Log.d("LifeStyle method","onDestroy();");
-        //textView.append("onDestroy();"+"\n");
-    }
-
-    //Сохраняет состояние activity по ключу  textToBundle.Сохраняет данные только в одной сесси пользователя.
+        //Сохраняет состояние activity по ключу  textToBundle.Сохраняет данные только в одной сесси пользователя.
 //    @Override
 //    public void onSaveInstanceState(Bundle outState) {
 //        super.onSaveInstanceState(outState);
@@ -96,4 +99,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
 //
 //        outState.putString("textToBundle", textView.getText().toString());
 //    }
+    }
+
+
 }
