@@ -29,7 +29,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
@@ -41,18 +41,18 @@
         app:layout_constraintTop_toTopOf="@+id/imageViewBell" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekBarTimer"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:progressBackgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTimer"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBell"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/imageViewBell" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"

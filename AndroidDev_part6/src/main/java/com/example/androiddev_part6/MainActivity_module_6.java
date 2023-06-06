@@ -10,11 +10,20 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class MainActivity_module_6 extends AppCompatActivity {
 
     private TextView textView;
+    private Button buttonTimer;
+    private TextView textTimer;
+   private SeekBar seekBarTimer;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +32,66 @@ public class MainActivity_module_6 extends AppCompatActivity {
 //        simpleHandler();
 //        SharedPreferencesFunc();
 
+        buttonTimer = findViewById(R.id.buttonTimer);
+        textTimer = findViewById(R.id.textViewTimer);
+        seekBarTimer = findViewById(R.id.seekBarTimer);
 
+        seekBarTimer.setMax(600);
+        seekBarTimer.setProgress(60);
+
+        seekBarTimer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                int minutes = progress/60;
+                int seconds = progress - (minutes*60);
+
+                String minutesString = "";
+                String secondsString = "";
+
+                if(minutes<10){
+                    minutesString = "0" + minutes;
+                }else{
+                    minutesString =  "" + String.valueOf(minutes);
+                }
+
+                if(seconds<10){
+                    secondsString = "0" + seconds;
+                }else{
+                    secondsString = "" + String.valueOf(seconds);
+                }
+
+                textTimer.setText(minutesString + ":" + secondsString);
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+
+//        buttonTimer.hasOnClickListeners(){
+//
+//        }
+//CountDownTimer timerBells = new CountDownTimer(30000,1000) {
+//    @Override
+//    public void onTick(long millisUntilFinished) {
+//        int
+//       textTimer.setText();
+//    }
+//
+//    @Override
+//    public void onFinish() {
+//
+//    }
+}
 
 
 //          for function onSave--
@@ -35,7 +103,7 @@ public class MainActivity_module_6 extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         Log.d("LifeStyle method","onCreate();");
         textView.append("onCreate();"+"\n");*/
-    }
+   // }
     //Таймер обратного отчета - таймер длится 10 секунд, с интервалом в одну секунду
     public void simpleCountDownTimer(){
 
