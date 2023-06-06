@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -17,6 +19,8 @@ public class MainActivity_module_6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_module6);
+//        simpleCountDownTimer
+//        simpleHandler();
 //        SharedPreferencesFunc();
 
 
@@ -32,7 +36,38 @@ public class MainActivity_module_6 extends AppCompatActivity {
         Log.d("LifeStyle method","onCreate();");
         textView.append("onCreate();"+"\n");*/
     }
+    //Таймер обратного отчета - таймер длится 10 секунд, с интервалом в одну секунду
+    public void simpleCountDownTimer(){
 
+        CountDownTimer firstTimer = new CountDownTimer(10000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.d("Timer",String.valueOf(millisUntilFinished/1000) +
+                        "   seconds left.");
+            }
+
+            @Override
+            public void onFinish() {
+                Log.d("Timer", "Finish");
+            }
+        };
+        firstTimer.start();
+    }
+
+    // Простой таймер
+    public void simpleHandler(){
+        Handler  handler =  new Handler();
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.d("Runnable:","Two second are passed");
+                handler.postDelayed(this,2000);
+            }
+        };
+        handler.post(runnable);
+
+    }
     //Сохранение данных через функцию  SharedPreferences
     public void SharedPreferencesFunc(){
 //        SharedPreferences sharedPreferences = this.getSharedPreferences("firstPref", Context.MODE_PRIVATE);
