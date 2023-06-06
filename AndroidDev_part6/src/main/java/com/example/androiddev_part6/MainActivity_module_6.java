@@ -11,6 +11,8 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -232,5 +234,13 @@ public void SharedPreferencesFunc(){
         }
 
         textTimer.setText(minutesString + ":" + secondsString);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.timer_menu,menu);
+        return true;
     }
 }

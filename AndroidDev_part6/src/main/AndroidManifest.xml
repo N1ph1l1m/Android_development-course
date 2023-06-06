@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDEV_part1">
         <activity
+            android:name=".settings_activity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity_module_6"
             android:exported="true">
             <intent-filter>
