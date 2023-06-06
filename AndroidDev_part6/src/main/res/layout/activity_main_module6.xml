@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#24667A"
     tools:context=".MainActivity_module_6">
 
     <TextView
@@ -15,5 +16,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewBell"
+        android:layout_width="337dp"
+        android:layout_height="570dp"
+        android:layout_marginBottom="188dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bell"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:backgroundTint="#039BE5"
+        android:text="Start"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBell"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBell"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBell" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:progressBackgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBell"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBell" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="0:60"
+        android:textColor="#231B98"
+        android:textSize="44dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBell"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBell"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBell" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
