@@ -43,8 +43,8 @@
 
     <SeekBar
         android:id="@+id/seekBarTimer"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="295dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="72dp"
         android:progressBackgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/textViewTimer"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -17,11 +18,14 @@ import android.widget.TextView;
 
 public class MainActivity_module_6 extends AppCompatActivity {
 
-    private TextView textView;
-//    private Button buttonTimer;
-    private TextView textTimer;
-   private SeekBar seekBarTimer;
-   private View view;
+     private TextView textView;
+     private Button buttonTimer;
+     private TextView textTimer;
+     private SeekBar seekBarTimer;
+
+     private View view;
+     private CountDownTimer countDownTimer;
+     private boolean isTimerOn;
 
 
     @Override
@@ -32,12 +36,13 @@ public class MainActivity_module_6 extends AppCompatActivity {
 //        simpleHandler();
 //        SharedPreferencesFunc();
 
-//        buttonTimer = findViewById(R.id.buttonTimer);
+        buttonTimer = findViewById(R.id.buttonTimer);
         textTimer = findViewById(R.id.textViewTimer);
         seekBarTimer = findViewById(R.id.seekBarTimer);
 
         seekBarTimer.setMax(600);
-        seekBarTimer.setProgress(60);
+        seekBarTimer.setProgress(10);
+        isTimerOn =false;
 
         seekBarTimer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -45,12 +50,10 @@ public class MainActivity_module_6 extends AppCompatActivity {
                 long progressInMillis = progress *1000;
                 UpdateTimer(progressInMillis);
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -175,19 +178,37 @@ public void SharedPreferencesFunc(){
          */
 
     public void startTimer(View view){
-        new CountDownTimer(seekBarTimer.getProgress() * 1000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                UpdateTimer(millisUntilFinished);
-            }
 
-            @Override
-            public void onFinish() {
-       Log.d("onfinish: ", "finish");
-            }
+        if(!isTimerOn){
+            buttonTimer.setText("Stop");
+            seekBarTimer.setEnabled(false);
+            isTimerOn = true;
+            countDownTimer = new  CountDownTimer (seekBarTimer.getProgress() * 1000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    UpdateTimer(millisUntilFinished);
+                }
+                @Override
+                public void onFinish() {
+                    Log.d("onFinish: ", "finish");
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.bip_sound);
+                    mediaPlayer.start();
+                    resTimer();
+                }
+            };
+            countDownTimer.start();
+        }else{
+            resTimer();
+        }
 
-        }.start();
-
+    }
+    private  void resTimer(){
+        countDownTimer.cancel();
+        textTimer.setText("00:00");
+        buttonTimer.setText("Start");
+        seekBarTimer.setEnabled(true);
+        seekBarTimer.setProgress(10);
+        isTimerOn = false;
     }
 
     private void UpdateTimer(long millisUntilFinished) {
