@@ -32,7 +32,7 @@
         android:id="@+id/buttonTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="236dp"
         android:backgroundTint="#039BE5"
         android:onClick="startTimer"
         android:text="Start"
@@ -63,7 +63,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBell"
         app:layout_constraintStart_toStartOf="@+id/imageViewBell"
-        app:layout_constraintTop_toTopOf="@+id/imageViewBell" />
+        app:layout_constraintTop_toTopOf="@+id/imageViewBell"
+
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
