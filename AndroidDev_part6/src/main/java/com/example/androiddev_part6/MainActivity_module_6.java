@@ -195,7 +195,7 @@ public void SharedPreferencesFunc(){
                 @Override
                 public void onFinish() {
                     Log.d("onFinish: ", "finish");
-                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.bip_sound);
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.bell_sound);
                     mediaPlayer.start();
                     resTimer();
                 }
@@ -250,12 +250,17 @@ public void SharedPreferencesFunc(){
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_settings){
-            Intent openSetting = new Intent(this, settings_activity.class);
+            Intent openSetting = new Intent(this, action_activity.class);
             startActivity(openSetting);
             return true;
         } else if(id == R.id.action_settings2) {
 
-            Intent openSetting = new Intent(this, action_activity.class);
+            Intent openSetting = new Intent(this, img_activity.class);
+            startActivity(openSetting);
+            return true;
+            }else if(id == R.id.action_settings3) {
+
+            Intent openSetting = new Intent(this, settings_activity.class);
             startActivity(openSetting);
             return true;
         }
