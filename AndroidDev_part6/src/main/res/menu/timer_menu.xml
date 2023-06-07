@@ -9,7 +9,7 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="1"
-        android:title="About"
+        android:title="Action"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_settings2"
