@@ -7,6 +7,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -55,15 +56,29 @@ public class OlimpusContentProvider  extends ContentProvider {
                 cursor = db.query(ClubOlympContract.MemberEntry.TABLE_NAME,projection,selection,selectionArgs,null ,null,sortOrder);
                 break;
             default:
-                Toast.makeText(getContext(),"Incorrect URI",Toast.LENGTH_LONG).show();
                 throw   new IllegalArgumentException("Can't query incorect URI " + uri);
         }
         return cursor;
     }
 
     @Override
-    public Uri insert( Uri uri,  ContentValues contentValues) {
-        return null;
+    public Uri insert( Uri uri,  ContentValues values) {
+        SQLiteDatabase db = dbOpenHelper.getWritableDatabase();
+
+        int match = uriMatcher.match(uri);
+
+        switch (match){
+            case MEMBERS:
+               long id  = db.insert(ClubOlympContract.MemberEntry.TABLE_NAME,null , values);
+               if(id == -1){
+                   Log.e("insertMethod", "Insertion of data in the table failed for" + uri);
+               return null;
+               }
+                 return ContentUris.withAppendedId(uri,id);
+            default:
+
+                throw   new IllegalArgumentException("Insertion of data in the table failed for"  + uri);
+        }
     }
 
     @Override
