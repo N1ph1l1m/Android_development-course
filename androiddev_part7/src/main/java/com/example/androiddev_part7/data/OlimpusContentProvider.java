@@ -1,10 +1,13 @@
 package com.example.androiddev_part7.data;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,8 +34,31 @@ public class OlimpusContentProvider  extends ContentProvider {
 
 
     @Override
-    public Cursor query(Uri uri,  String[] strings,  String s,  String[] strings1, String s1) {
-        return null;
+    // content://com.android.uraall.clubolympus/members/34
+    // projection = { "lastName" , "gender" }
+    public Cursor query(Uri uri,  String[] projection,  String selection,  String[] selectionArgs, String sortOrder) {
+        SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
+        Cursor cursor;
+
+        int match = uriMatcher.match(uri);
+
+        switch (match){
+            case MEMBERS:
+                cursor = db.query(ClubOlympContract.MemberEntry.TABLE_NAME,projection,selection,selectionArgs,null ,null,sortOrder);
+                break;
+
+                // selection = "_id=?"
+            // selectionArg = 34
+            case MEMBERS_ID:
+                selection = ClubOlympContract.MemberEntry._ID + "=?";
+                selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
+                cursor = db.query(ClubOlympContract.MemberEntry.TABLE_NAME,projection,selection,selectionArgs,null ,null,sortOrder);
+                break;
+            default:
+                Toast.makeText(getContext(),"Incorrect URI",Toast.LENGTH_LONG).show();
+                throw   new IllegalArgumentException("Can't query incorect URI " + uri);
+        }
+        return cursor;
     }
 
     @Override
