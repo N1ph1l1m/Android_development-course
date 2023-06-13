@@ -31,7 +31,7 @@ public class AddMemberActivity extends AppCompatActivity {
     private EditText lastNameEditText;
     private EditText sportEditText;
     private Spinner genderSpinner;
-    private int     gender = 0;
+    private int gender = 0;
     private ArrayAdapter spinnerAdapter;
 
 
@@ -71,9 +71,10 @@ public class AddMemberActivity extends AppCompatActivity {
         spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.array_gender, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderSpinner.setAdapter(spinnerAdapter);
+
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String seletedGender = (String) parent.getItemAtPosition(position);
                 if(!TextUtils.isEmpty(seletedGender)){
                     if(seletedGender.equals("Male")){
@@ -97,12 +98,12 @@ public class AddMemberActivity extends AppCompatActivity {
     private void insertMember() {
         String firstName = firstNameEditText.getText().toString().trim();
         String lastName  = lastNameEditText.getText().toString().trim();
-        String group = sportEditText.getText().toString().trim();
+        String sport = sportEditText.getText().toString().trim();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(ClubOlympContract.MemberEntry.KEY_FIRST_NAME,firstName);
         contentValues.put(ClubOlympContract.MemberEntry.KEY_LAST_NAME,lastName);
-        contentValues.put(ClubOlympContract.MemberEntry.KEY_SPORT,group);
+        contentValues.put(ClubOlympContract.MemberEntry.KEY_SPORT,sport);
         contentValues.put(ClubOlympContract.MemberEntry.KEY_GENDER,gender);
 
         ContentResolver contentResolver  = getContentResolver();
