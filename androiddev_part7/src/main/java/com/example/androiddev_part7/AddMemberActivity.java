@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -13,18 +16,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.androiddev_part7.data.ClubOlympContract;
+import com.example.androiddev_part7.data.OlimpusContentProvider;
 
 
-
+import java.net.URI;
 import java.util.ArrayList;
 
 public class AddMemberActivity extends AppCompatActivity {
 
     private EditText firstNameEditText;
     private EditText lastNameEditText;
-    private EditText groupNameEditText;
+    private EditText sportEditText;
     private Spinner genderSpinner;
     private int     gender = 0;
     private ArrayAdapter spinnerAdapter;
@@ -40,6 +45,7 @@ public class AddMemberActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.save_member:
+                insertMember();
                 return  true;
             case R.id.delete_member:
                 return  true;
@@ -58,7 +64,7 @@ public class AddMemberActivity extends AppCompatActivity {
         firstNameEditText = findViewById(R.id.editFirstName);
         lastNameEditText = findViewById(R.id.editLastName);
         genderSpinner = findViewById(R.id.spinnerGender);
-        groupNameEditText = findViewById(R.id.groupNameEdit);
+        sportEditText= findViewById(R.id.sportEditText);
 
 
 
@@ -87,9 +93,26 @@ public class AddMemberActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void insertMember() {
+        String firstName = firstNameEditText.getText().toString().trim();
+        String lastName  = lastNameEditText.getText().toString().trim();
+        String group = sportEditText.getText().toString().trim();
 
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ClubOlympContract.MemberEntry.KEY_FIRST_NAME,firstName);
+        contentValues.put(ClubOlympContract.MemberEntry.KEY_LAST_NAME,lastName);
+        contentValues.put(ClubOlympContract.MemberEntry.KEY_SPORT,group);
+        contentValues.put(ClubOlympContract.MemberEntry.KEY_GENDER,gender);
 
+        ContentResolver contentResolver  = getContentResolver();
+        Uri uri = contentResolver.insert(ClubOlympContract.MemberEntry.CONTENT_URI,contentValues);
 
+        if(uri == null){
+            Toast.makeText(this,"Insertion of data in the table failed for", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this,"Data seved", Toast.LENGTH_LONG).show();
+        }
 
 
     }
