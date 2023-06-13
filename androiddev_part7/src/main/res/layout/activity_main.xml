@@ -7,7 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <TextView
+        android:id="@+id/dataTextWiew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
 
         android:id="@+id/floatingActionButton"
