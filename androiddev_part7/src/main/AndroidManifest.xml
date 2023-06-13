@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="package com.example.androiddev_part7;"
+            android:name=".data.OlimpusContentProvider"
+            android:exported="false"/>
     </application>
 
 </manifest>
